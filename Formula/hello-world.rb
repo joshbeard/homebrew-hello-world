@@ -5,21 +5,21 @@
 class HelloWorld < Formula
   desc "Say Hello World - a test package"
   homepage "https://github.com/joshbeard/testing-packaging"
-  version "0.11.5"
+  version "0.11.6"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://get.jbeard.dev/pkg/0.11.5/hello-world_0.11.5_darwin_amd64.tar.gz"
-      sha256 "0f6a9e658c7e8aeac7494c9534eaa063419ffc3dc53841dd395d93380b359696"
+      url "https://get.jbeard.dev/pkg/0.11.6/hello-world_0.11.6_darwin_amd64.tar.gz"
+      sha256 "e18ea3513079d7715e1261ed3465a2d8a20bef97c73abc0a81713ea8fec7930c"
 
       def install
         bin.install "hello-world"
       end
     end
     if Hardware::CPU.arm?
-      url "https://get.jbeard.dev/pkg/0.11.5/hello-world_0.11.5_darwin_arm64.tar.gz"
-      sha256 "c9efaaec744a04e19922330f9e39e5e0177ea405d73c4808662087f4003b3c3c"
+      url "https://get.jbeard.dev/pkg/0.11.6/hello-world_0.11.6_darwin_arm64.tar.gz"
+      sha256 "e91933d44306bbbfea233ca5ee612994c30ccfeb0e1d66d3340c029bc2cf45d0"
 
       def install
         bin.install "hello-world"
@@ -28,25 +28,25 @@ class HelloWorld < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://get.jbeard.dev/pkg/0.11.5/hello-world_0.11.5_linux_arm.tar.gz"
-      sha256 "3330892dfb6ba876bf749e265bd588cf05d7a3e3dd65d34dc6553ded05da0a6c"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://get.jbeard.dev/pkg/0.11.6/hello-world_0.11.6_linux_arm64.tar.gz"
+      sha256 "f5f5d38fdc7f949ae9dbad4cdd95e9ba6192698823d0d0cfde16321b50eaff96"
 
       def install
         bin.install "hello-world"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://get.jbeard.dev/pkg/0.11.5/hello-world_0.11.5_linux_arm64.tar.gz"
-      sha256 "f1edd2bad7578d4c5fcb76c47dafadc3b9601a97272230544f088e41474d4ee6"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://get.jbeard.dev/pkg/0.11.6/hello-world_0.11.6_linux_arm.tar.gz"
+      sha256 "44f21cc16ec1d0425ccd1c0d950aba0ab41b71538783268de95927259898553b"
 
       def install
         bin.install "hello-world"
       end
     end
     if Hardware::CPU.intel?
-      url "https://get.jbeard.dev/pkg/0.11.5/hello-world_0.11.5_linux_amd64.tar.gz"
-      sha256 "eae51520687a55ab9c8ca779b52972a7b3db0e2294b560c982b1628834249e65"
+      url "https://get.jbeard.dev/pkg/0.11.6/hello-world_0.11.6_linux_amd64.tar.gz"
+      sha256 "d3b810480e2446ab207e06542795e69d42cccf4df1610b01b47aaf340b680074"
 
       def install
         bin.install "hello-world"
